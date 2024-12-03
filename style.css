@@ -1,0 +1,75 @@
+/* Réinitialisation des marges et des rembourrages */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Conteneur principal */
+.cv-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenu principal (contenant l'aside et le main-content) */
+.content {
+  flex: 1;
+  /* Permet au contenu de s'étendre pour remplir l'espace disponible */
+  display: flex;
+}
+
+/* Partie gauche (aside) */
+aside {
+  padding: 2vh 2vh 2vh 2vh;
+  width: 15%;
+  background-color: #f0f0f0;
+}
+
+/* Partie droite (contenu principal) */
+.main-content {
+  padding: 2vh 2vh 2vh 2vh;
+  width: 85%;
+  background-color: #fff;
+}
+
+/* Footer en bas de page */
+footer {
+  padding: 2vh 2vh 2vh 2vh;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+body {
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.picture {
+  width: 30vh;
+}
+
+img {
+  width: 9vh;
+}
+
+a {
+  text-decoration: none;
+  color: #4472c4;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+figcaption {
+  opacity: 0;
+}
+
+/* Conteneur principal */
+.other {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

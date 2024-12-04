@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+
 /* Conteneur principal */
 .cv-container {
   display: flex;
@@ -20,38 +28,83 @@
 
 /* Partie gauche (aside) */
 aside {
-  padding: 2vh 2vh 2vh 2vh;
   width: 15%;
   background-color: #f0f0f0;
 }
 
+@media (max-width: 1400px) {
+
+  /* Styles pour les tablettes */
+  aside {
+    width: 25%;
+    /* Augmenter la largeur de l'aside sur les petits écrans */
+  }
+}
+
+@media (max-width: 820px) {
+
+  /* Styles pour les smartphones */
+  aside {
+    width: 40%;
+    /* L'aside prend toute la largeur de l'écran */
+  }
+}
+
+
+.block-photo-reseau {
+  width: 100%;
+  /* Prend toute la largeur de l'aside */
+  text-align: center;
+  /* Centre horizontalement l'image */
+}
+
+.picture {
+  width: 100%;
+  /* Prend toute la largeur disponible */
+  height: auto;
+  /* La hauteur s'adapte en fonction de la largeur */
+  object-fit: cover;
+  /* Étire l'image pour remplir tout l'espace */
+}
+
+.social-networks {
+  width: 100%;
+}
+
+.social-networks a {
+  /* Styles pour les liens des réseaux sociaux */
+  display: inline-block;
+}
+
+
+img {
+  width: 9vh;
+}
+
+figcaption {
+  opacity: 0;
+}
+
+.content-aside {
+  padding: 2vh;
+}
+
+.about {
+  text-align: justify;
+}
+
 /* Partie droite (contenu principal) */
 .main-content {
-  padding: 2vh 2vh 2vh 2vh;
+  padding: 2vh;
   width: 85%;
   background-color: #fff;
 }
 
 /* Footer en bas de page */
 footer {
-  padding: 2vh 2vh 2vh 2vh;
+  padding: 2vh;
   background-color: #f0f0f0;
   text-align: center;
-}
-
-body {
-  font-family: Helvetica;
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.picture {
-  width: 30vh;
-}
-
-img {
-  width: 9vh;
 }
 
 a {
@@ -63,9 +116,7 @@ a:hover {
   text-decoration: underline;
 }
 
-figcaption {
-  opacity: 0;
-}
+
 
 /* Conteneur principal */
 .other {

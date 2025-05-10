@@ -261,7 +261,7 @@ header .function {
   font-size: 1.3rem;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-l);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .contact {
@@ -381,6 +381,35 @@ main section article > div:first-child {
               padding 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.portfolio-peek-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--portfolio-peek-amount);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-transform: uppercase;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0s linear;
+  z-index: 4;
+}
+
+.portfolio:hover .portfolio-peek-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+}
+
 .portfolio:hover {
   transform: translateX(0);
   background-color: var(--accent-color-darker);
@@ -389,15 +418,15 @@ main section article > div:first-child {
 
 .portfolio h2,
 .portfolio p,
-.portfolio a span {
+.portfolio a {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease 0.1s, visibility 0s linear 0.4s;
+  transition: opacity 0.3s ease 0.15s, visibility 0s linear 0.45s;
 }
 
 .portfolio:hover h2,
 .portfolio:hover p,
-.portfolio:hover a span {
+.portfolio:hover a {
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease 0.2s, visibility 0s linear 0.2s;
@@ -431,7 +460,7 @@ main section article > div:first-child {
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
-  transition: color 0.4s ease 0.1s, border-color 0.4s ease;
+  transition: color 0.4s ease 0.1s, border-color 0.4s ease, opacity 0.3s ease 0.15s, visibility 0s linear 0.45s;
 }
 
 .portfolio a:hover {
@@ -462,9 +491,7 @@ main section article > div:first-child {
   content: "💼";
   display: inline-block;
   margin-right: var(--spacing-s);
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0s linear, margin-right 0.3s ease;
+  z-index: 2;
 }
 
 
@@ -478,9 +505,13 @@ main section article > div:first-child {
   opacity: 0;
   visibility: hidden;
   margin-right: 0;
-  transition: opacity 0.3s ease, visibility 0s linear 0.3s, margin-right 0.3s ease;
+  transition: opacity 0.2s ease, visibility 0s linear 0.2s, margin-right 0.2s ease;
 }
 
+.portfolio:hover a span {
+  opacity: 1;
+  visibility: visible;
+}
 
 /* Footer //////////////////////////////////////// */
 footer {
@@ -587,6 +618,11 @@ footer .other article .explain {
     top: var(--spacing-xl);
   }
 
+  .portfolio-peek-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+
   .portfolio h2 {
     display: block;
     margin-bottom: var(--spacing-s);
@@ -654,7 +690,10 @@ footer .other article .explain {
     font-size: 2rem;
   }
   
-
+  .portfolio-peek-text {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+  }
 
   footer .other article {
     width: calc(33.333% - (var(--spacing-l) * 2 / 3));
